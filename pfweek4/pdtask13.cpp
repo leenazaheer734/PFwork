@@ -18,18 +18,24 @@ main()
    int tomnorm=30000 ;
    int diffplay= tomnorm-totalplay;
 
+
+   int  extraplay=totalplay-tomnorm;
+   int hourplay=extraplay/60;
+   int  minplay=extraplay%60;
+   int lessplay=tomnorm-totalplay;
+   int lesshplay=lessplay/60;
+   int lessmplay=lessplay%60;
+ 
   if(totalplay> tomnorm)
  {
-   int extraplay=totalplay-tomnorm;
-
   cout<< "Tom will run away!"<< endl;
-  cout<<"difference fom norm is "<< extraplay<< " min for play" << endl;
+  cout<<"difference fom norm is "<< hourplay<< " hour and " << minplay<< " min for play" << endl;
  }
     
   if(totalplay<= tomnorm)
  {
   cout<<"Tom will sleep well!"<< endl;
-  cout<<"difference fom norm is "<< diffplay<< " min less for play" << endl;
+  cout<<"difference fom norm is "<< lesshplay << " hour and " << lessmplay<< " min less for play" << endl;
   }
 }
 

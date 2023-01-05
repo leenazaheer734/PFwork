@@ -22,13 +22,16 @@ while(true)
    }
     if(y == 10)
     {
-     gotoxy(x,y-1);
-     cout<< " " ;
+      gotoxy(x,y-1);
+     cout<<" ";
      y=4;
-      }
+     
+    }
+
+
+  }
 }
 
-}
 
 void gotoxy(int x, int y)
 {
