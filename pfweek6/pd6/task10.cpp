@@ -5,101 +5,137 @@ using namespace std;
 void printmaze();
 void gotoxy(int x, int y);
 void printpacman(int x, int y);
-void printghost(int x, int y);
 char getCharAtxy(short int x, short int y);
-void clear(int x, int y, char previous);
 void erase(int x, int y);
+
 
 main()
 {
-    int x=2;
-    int y=2;
-    string direction = "right";
-    char previous = ' ';
-    system ("cls");
-
+    int x = 5;
+    int y = 3;
+    int score = 0;
+    system("cls");
     printmaze();
-    printghost(x,y);
-    while(1)
+    printpacman(x, y);
+    gotoxy(7,24);
+    cout<<"Score : " << score;
+    bool running = true;
+
+    while (running)
     {
-        Sleep (200);
-        int score=0 ;
-                if (GetAsyncKeyState(VK_LEFT))
-        {   
-            char nextlocation = getCharAtxy(x-1 , y);
-            if (nextlocation == ' ' || nextlocation == '.')
+        if (GetAsyncKeyState(VK_LEFT))
+        {
+            char nextlocation = getCharAtxy(x - 1, y);
+            if (nextlocation == ' ')
             {
                 erase(x, y);
                 x = x - 1;
                 printpacman(x, y);
             }
-            if(nextlocation == '.')
-            {   gotoxy(25,15);
-                cout<< "score = " << score+1;
-            } 
+            if (nextlocation == '.')
+            {
+                erase(x, y);
+                x = x - 1;
+                printpacman(x, y);
+                score = score + 5;
+                gotoxy(7, 24);
+                cout << "Score : " << score;
+            }
         }
 
         if (GetAsyncKeyState(VK_RIGHT))
         {
-            char nextlocation = getCharAtxy(x +1, y);
-            if (nextlocation == ' ' || nextlocation == '.')
+            char nextlocation = getCharAtxy(x + 1, y);
+            if (nextlocation == ' ')
             {
                 erase(x, y);
                 x = x + 1;
                 printpacman(x, y);
             }
-            if(nextlocation == '.')
-            {   gotoxy(25,15);
-                cout<< "score = " << score;
-            } 
+            if (nextlocation == '.')
+            {
+                erase(x, y);
+                x = x + 1;
+                printpacman(x, y);
+                score = score + 5;
+                gotoxy(7, 24);
+                cout << "Score : " << score;
+            }
         }
 
         if (GetAsyncKeyState(VK_UP))
         {
-            char nextlocation = getCharAtxy(x, y-1);
-            if (nextlocation == ' ' || nextlocation == '.')
+            char nextlocation = getCharAtxy(x, y - 1);
+            if (nextlocation == ' ')
             {
                 erase(x, y);
                 y = y - 1;
                 printpacman(x, y);
             }
-            if(nextlocation == '.')
-            {   gotoxy(25,15);
-                cout<< "score = " << score;
+            if (nextlocation == '.')
+            {
+                erase(x, y);
+                y = y - 1;
+                printpacman(x, y);
+                score = score + 5;
+                gotoxy(7, 24);
+                cout << "Score : " << score;
             }
         }
 
         if (GetAsyncKeyState(VK_DOWN))
         {
-            char nextlocation = getCharAtxy(x, y+1 );
-            if (nextlocation == ' ' || nextlocation == '.')
+            char nextlocation = getCharAtxy(x, y + 1);
+            if (nextlocation == ' ')
             {
                 erase(x, y);
                 y = y + 1;
                 printpacman(x, y);
             }
-            if(nextlocation == '.')
-            {   gotoxy(25,15);
-                cout<< "score = " << score;
-            }  
-        }  
+            if (nextlocation == '.')
+            {
+                erase(x, y);
+                y = y + 1;
+                printpacman(x, y);
+                score = score + 5;
+                gotoxy(7, 24);
+                cout << "Score : " << score;
+            }
+        }
+        if (GetAsyncKeyState(VK_ESCAPE))
+        {
+            running = false;
+        }
+        Sleep(200);
     }
-}    
+}
+
 void printmaze()
 {
-    cout << "###########################" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##              .........##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "###########################" << endl;
+
+    cout << "   ###################################################    " << endl;
+    cout << "   ##    ...........    |+|     ................... ##    " << endl;
+    cout << "   ##      +++++++++    |+|                    |+|  ##    " << endl;
+    cout << "   ##     .|+|                ++++++++++  ..   |+|  ##    " << endl;
+    cout << "   ##.    .|+|               |+|      |+| ..   |+|  ##      " << endl;
+    cout << "   ##.    .++++++++       .  |+|++++++|+| ..   |+|  ##      " << endl;
+    cout << "   ##.                 |+|.                    |+|  ##      " << endl;
+    cout << "   ##.|+|     .........|+|.    |+|.....   +++++|+|  ##      " << endl;
+    cout << "   ##.|+|    ++++++++++|+|.    |+|.....             ##        " << endl;
+    cout << "   ##.|+|                 .    |+|.....    |+|..    ##        " << endl;
+    cout << "   ##.|+|+++++++               |+|++++++   |+|..    ##        " << endl;
+    cout << "   ##.        |+|         |+|...           |+|..    ##        " << endl;
+    cout << "   ##.        |+|         |+|...                    ##        " << endl;
+    cout << "   ##         |+|++++++   |+|...    ++++++++++++++  ##        " << endl;
+    cout << "   ##  .......|+|         |+|...              .|+|  ##        " << endl;
+    cout << "   ##    ++++++++         |+|...              .|+|  ##        " << endl;
+    cout << "   ##                           |+|++++++++++ .|+|  ##        " << endl;
+    cout << "   ##    |+|.  |+|.....         |+|.......    .|+|  ##        " << endl;
+    cout << "   ##    |+|.  |+|++++++++      |+|     |+|   .|+|  ##        " << endl;
+    cout << "   ##    |+|.                   |+|     |+|   .|+|  ##        " << endl;
+    cout << "   ##    |+|.          +++++++++|+|     |+|   .     ##        " << endl;
+    cout << "   ## ...............................               ##        " << endl;
+    cout << "   ###################################################        " << endl;
 }
 void gotoxy(int x, int y)
 {
@@ -119,24 +155,13 @@ char getCharAtxy(short int x, short int y)
     coordBufSize.Y = 1;
     return ReadConsoleOutput(GetStdHandle(STD_OUTPUT_HANDLE), &ci, coordBufSize, xy, &rect) ? ci.Char.AsciiChar : ' ';
 }
-void clear(int x, int y, char previous)
-{
-    gotoxy(x,y);
-    cout<< previous;
-}
 void printpacman(int x, int y)
 {
-    gotoxy(x,y);
-    cout<< "P";
-    Sleep(100);
+    gotoxy(x, y);
+    cout << "P";
 }
 void erase(int x, int y)
 {
     gotoxy(x, y);
     cout << " ";
-}
-void printghost(int x, int y)
-{
-    gotoxy(x,y);
-    cout<<"G";
 }

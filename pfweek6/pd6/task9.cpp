@@ -12,9 +12,9 @@ void clear(int x, int y, char previous);
 
 main()
 {
-    int gx=2;
-    int gy=2;
-    int vx=3;
+    int gx=29;
+    int gy=1;
+    int vx=5;
     int vy=3;
     string gdirection = "right";
     string vdirection = "down";
@@ -32,7 +32,7 @@ main()
         if(gdirection=="right")
         {
             char nextlocation =  getCharAtxy(gx+1, gy);
-            if( nextlocation == '#')
+            if( nextlocation == '#' || nextlocation == '|' || nextlocation == '+')
             {
                 gdirection = "left";
             }
@@ -49,7 +49,7 @@ main()
         else if(gdirection=="left")
         {
             char nextlocation =  getCharAtxy(gx-1, gy);
-            if( nextlocation == '#')
+            if( nextlocation == '#' || nextlocation == '|'  || nextlocation == '+')
             {
                 gdirection = "right";
             }
@@ -65,7 +65,7 @@ main()
         if(vdirection=="down")
         {
             char nextlocation =  getCharAtxy(vx, vy+1);
-            if( nextlocation == '#')
+            if( nextlocation == '#' ||  nextlocation == '|'  || nextlocation == '+')
             {
                 vdirection = "up";
             }
@@ -80,7 +80,7 @@ main()
         else if(vdirection=="up")
         {
             char nextlocation =  getCharAtxy(vx, vy-1);
-            if( nextlocation == '#')
+            if( nextlocation == '#' ||  nextlocation == '|'  || nextlocation == '+')
             {
                 vdirection = "down";
             }
@@ -102,19 +102,29 @@ main()
 void printmaze()
 {
 
-    cout << "###########################" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##              .........##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "##                       ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "## .                     ##" << endl;
-    cout << "###########################" << endl;
+    cout << "   ###################################################    " << endl;
+    cout << "   ##    ...........    |+|     ................... ##    " << endl;
+    cout << "   ##      +++++++++    |+|                    |+|  ##    " << endl;
+    cout << "   ##     .|+|                ++++++++++  ..   |+|  ##    " << endl;
+    cout << "   ##.    .|+|               |+|      |+| ..   |+|  ##      " << endl;
+    cout << "   ##.    .++++++++       .  |+|++++++|+| ..   |+|  ##      " << endl;
+    cout << "   ##.                 |+|.                    |+|  ##      " << endl;
+    cout << "   ##.|+|     .........|+|.    |+|.....   +++++|+|  ##      " << endl;
+    cout << "   ##.|+|    ++++++++++|+|.    |+|.....             ##        " << endl;
+    cout << "   ##.|+|                 .    |+|.....    |+|..    ##        " << endl;
+    cout << "   ##.|+|+++++++               |+|++++++   |+|..    ##        " << endl;
+    cout << "   ##.        |+|         |+|...           |+|..    ##        " << endl;
+    cout << "   ##.        |+|         |+|...                    ##        " << endl;
+    cout << "   ##         |+|++++++   |+|...    ++++++++++++++  ##        " << endl;
+    cout << "   ##  .......|+|         |+|...              .|+|  ##        " << endl;
+    cout << "   ##    ++++++++         |+|...              .|+|  ##        " << endl;
+    cout << "   ##                           |+|++++++++++ .|+|  ##        " << endl;
+    cout << "   ##    |+|.  |+|.....         |+|.......    .|+|  ##        " << endl;
+    cout << "   ##    |+|.  |+|++++++++      |+|     |+|   .|+|  ##        " << endl;
+    cout << "   ##    |+|.                   |+|     |+|   .|+|  ##        " << endl;
+    cout << "   ##    |+|.          +++++++++|+|     |+|   .     ##        " << endl;
+    cout << "   ## ...............................               ##        " << endl;
+    cout << "   ###################################################        " << endl;
 }
 void gotoxy(int x, int y)
 {
