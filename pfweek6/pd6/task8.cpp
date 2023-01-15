@@ -26,13 +26,13 @@ string decidelocation(int x, int y, int h)
     {
         location = "inside!";
     }
-    else if (((x >= 0 && x < h) && (y > h && y <= 4 * h)) || ((x >= 0 && x <= 3 * h) && (y > 4 * h && y <= 5 * h)) || ((x > 2 * h && x <= 3 * h) && (y > h && y <= 4 * h)))
+    else if (((x >= 0 && x <= 3 * h) && y == 0) || ((y >= h && y <= 4 * h) && (x == h || x == 2 * h)) || ((y >= 0 && y <= 2 * h) && (x == 0 || x == 3 * h)) || ((x >= h && x <= 2 * h) && y == 4 * h) || (((x >= 0 && x <= h) || (x >= 2 * h && x <= 3 * h)) && y == h))
     {
-        location = "outside!";
+        location = "Border!";
     }
     else
     {
-        location = "border";
+        location = "outside!";
     }
     return location;
 }
