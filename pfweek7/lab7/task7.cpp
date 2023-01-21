@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 void printprcentage(int number);
 main()
@@ -48,10 +49,10 @@ void printprcentage(int number)
     double percent3 = (countP3 *100.0) / number;
     double  percent4 = (countP4 *100.0) / number;
     double  percent5 = (countP5 *100.0) / number;
-    cout<< percent1<< endl;
-    cout<< percent2<< endl;
-    cout<< percent3<< endl;
-    cout<< percent4<< endl;
-    cout<< percent5<< endl;
+    cout<< ceil(percent1*100.0)/100<< endl;
+    cout<< ceil(percent2*100.0)/100.0<< endl;
+    cout<< ceil(percent3*100.0)/100.0<< endl;
+    cout<< ceil(percent4*100.0)/100.0<< endl;
+    cout<< ceil(percent5*100.0)/100.0<< endl;
 
 }

@@ -15,11 +15,12 @@ main()
     float totalExpense = calculatePrice(inheritedmoney, yeartolive);
     if (totalExpense >= 0)
     {
-        cout << "Yess! He will live aa carefree life and will have " << totalExpense << " dollars left.";
+        cout << "Yess! He will live aa carefree life and will have " << ceil(totalExpense*100.0)/100.0 << " dollars left.";
     }
     else if (totalExpense < 0)
     {
-        cout << "He will need " << fabs(totalExpense) << " dollars to survive.";
+        float need = fabs(totalExpense);
+        cout << "He will need " << ceil(need*100.0)/100.0 << " dollars to survive.";
     }
 }
 float calculatePrice(float inheritedmoney, int yeartolive)

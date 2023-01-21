@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 void calculatepercentage(int number);
 main()
@@ -34,8 +35,8 @@ void calculatepercentage(int number)
     float bytruck = (truck* 100.0)/total;
     float bytrain = (train* 100.0)/total;
     float avgprice = (minibus* 200.0 +truck*175.0+ train*120.0)/ total;
-    cout<<"byminibus: "<<bymini<<endl;
-    cout<<"by truck: "<<bytruck<< endl;
-    cout<<"byt train: "<<bytrain<<endl;
-    cout<<"average price: "<<avgprice<< endl;
+    cout<<"byminibus: "<< ceil(bymini*100.0) /100.0 <<endl;
+    cout<<"by truck: "<< ceil(bytruck*100.0)/ 100.0 << endl;
+    cout<<"byt train: "<< ceil(bytrain*100.0)/100.0 <<endl;
+    cout<<"average price: "<< ceil(avgprice*100.0)/100.0<< endl;
 }

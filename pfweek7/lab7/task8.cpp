@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 float calculatemoney(int age, int toyprice, int machinecost);
 main()
@@ -15,12 +16,12 @@ main()
     if (savedmoney >= machinecost)
     {
         cout << "Yess!!!" << endl;
-        cout << savedmoney - machinecost << " $ ";
+        cout << ceil(( savedmoney - machinecost)*100.0)/100.0 << " $ ";
     }
     else
     {
         cout << "not enough money to buy washing machine!!!" << endl;
-        cout << machinecost - savedmoney << " $ ";
+        cout << ceil((machinecost - savedmoney)*100.0)/100.0 << " $ ";
     }
 }
 float calculatemoney(int age, int toyprice, int machinecost)
