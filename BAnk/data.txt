@@ -1,0 +1,8 @@
+ayesha,10000,deposit,Sun Mar 05 13:09:02 2023
+ayesha,12433,deposit,Sun Mar 05 13:09:17 2023
+ayesha,899999,deposit,Sun Mar 05 13:12:06 2023
+ayesha,10000,withdraw,Sun Mar 05 13:28:50 2023
+ayesha,10000,withdraw,Sun Mar 05 13:31:00 2023
+ayesha,5000,withdraw,Sun Mar 05 13:31:36 2023
+ayesha,20000,withdraw,Sun Mar 05 13:40:29 2023
+ayesha,10000,withdraw,Sun Mar 05 13:40:45 2023

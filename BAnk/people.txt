@@ -1,0 +1,10 @@
+0,leena zaheer,1212,admin,admin,0,00000000000,admin
+1,fatima,6767,client,current,3850,02984928482,freeze
+2,faris,7676,client,current,11000,12098958905,freeze
+3,ayesha,7878,client,salary,865344,02894787489,running
+4,laiba,1234,client,current,3025,03344567544,running
+5,habiba,4567,client,current,27500,03345652167,running
+6,bilal,5678,client,salary,11000,03224578905,running
+7,akbar,1213,client,salary,10000,23095902895,freeze
+9,waleed,1111,client,salary,10000,32958098293,running
+10,majid,8989,client,salary,10000,38975879872,running
